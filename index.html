@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
 
+<div id="wrapper">
 <head>
     <meta charset=utf-8 />
-    <title>JS Bin</title>
+    <title>Tip Calculator</title>
+    <h1>Tip Calculator</h1>
 </head>
 
 <body>
-    <h1>Tip Calculator</h1>
-    <form>
-        <p>Amount: $<input id="bill" type="number"></p>
-        <button id="my-button">Calculate</button>
-        <p>Tip: <span id="tip"></span></p>
-        <p>Total: <span id="total"></span></p>
+    <form onsubmit ="return false">
+        Amount: $<input id="bill" type="text">
+        <br>
+        <button onclick="calc()">Calculate</button>
+        <br>
+        Tip: <span id="tip"></span>
+        <br>
+        Total: <span id="total"></span>
     </form>
+</div>
+<script>
+    function calc() {
+        var bill = document.getElementById('bill').value;
+        var tip = bill * .15;
+        var total = bill*1 + tip;
+    
+        document.getElementById("tip").innerHTML= "$"+(tip).toFixed(2);
+        document.getElementById("total").innerHTML = "$"+(total).toFixed(2);
+    }
+</script>
 </body>
 
 </html>
