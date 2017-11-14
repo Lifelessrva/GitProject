@@ -27,11 +27,7 @@ try {
     $mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com');
-
-    //Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-
+    
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Here is the subject';
